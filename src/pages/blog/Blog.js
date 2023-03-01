@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { Link, useSearchParams } from 'react-router-dom'
 import { url } from '../../utils'
 
@@ -32,6 +33,10 @@ export default function Blog() {
 
   return (
     <div>
+      <Helmet>
+        <title>Blog</title>
+      </Helmet>
+
       <input type="text" defaultValue={search} onChange={e => setSearch(e.target.value)} />
       <ul>
         {posts.map(post => (
